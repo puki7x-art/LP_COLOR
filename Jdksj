@@ -1,0 +1,10 @@
+import device
+import midi
+
+def OnNoteOn(event):
+    device.midiOutMsg(midi.MIDI_NOTE_ON, event.data1, 100)
+    event.handled = False
+
+def OnNoteOff(event):
+    device.midiOutMsg(midi.MIDI_NOTE_ON, event.data1, 0)
+    event.handled = False
